@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: CSS | ALPERS</title>
+  <title>计算机网络面试题总结 | ALPERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在发际线升高的路上越走越远">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ALPERS">
-<meta property="og:url" content="http://yoursite.com/tags/CSS/index.html">
+  <meta name="description" content="1. 请说出三种减少页面加载时间的方法服务器角度  采取CDN加速  开启gzip压缩  允许使用强缓存或协商缓存  增加服务器带宽">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络面试题总结">
+<meta property="og:url" content="http://yoursite.com/2020/03/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="ALPERS">
-<meta property="og:description" content="在发际线升高的路上越走越远">
+<meta property="og:description" content="1. 请说出三种减少页面加载时间的方法服务器角度  采取CDN加速  开启gzip压缩  允许使用强缓存或协商缓存  增加服务器带宽">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-23T02:26:06.000Z">
+<meta property="article:modified_time" content="2020-03-23T02:52:59.339Z">
 <meta property="article:author" content="alpers">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ALPERS" type="application/atom+xml">
@@ -138,36 +142,96 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-计算机网络" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-03-22T07:12:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/">CSS面试题总结</a>
+    <h1 class="article-title" itemprop="name">
+      计算机网络面试题总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="archive-article-date">
+  	<time datetime="2020-03-23T02:26:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-请说出三种减少页面加载时间的方法"><a href="#1-请说出三种减少页面加载时间的方法" class="headerlink" title="1. 请说出三种减少页面加载时间的方法"></a>1. 请说出三种减少页面加载时间的方法</h4><p><strong>服务器角度</strong></p>
+<ul>
+<li><p>采取CDN加速</p>
+</li>
+<li><p>开启gzip压缩</p>
+</li>
+<li><p>允许使用强缓存或协商缓存</p>
+</li>
+<li><p>增加服务器带宽</p>
+</li>
+</ul>
+<a id="more"></a>
+
+<p><strong>客户端角度</strong></p>
+<ul>
+<li>合理组织CSS、JavaScript代码位置</li>
+<li>减少DOM操作、添加事件委托</li>
+<li>部分操作可设置防抖和节流</li>
+<li>对于可预见的操作采取preload或prerender的预加载</li>
+<li>对于图片可以懒加载</li>
+<li>合并CSS图片（精灵图/雪碧图）</li>
+<li>减少使用iframe</li>
+</ul>
+<p><strong>资源优化打包角度</strong></p>
+<ul>
+<li>使用打包工具将Js文件、CSS文件和静态文件进行恰当打包处理。</li>
+</ul>
+<h4 id="2-http协议中与资源缓存相关的协议头有哪些？"><a href="#2-http协议中与资源缓存相关的协议头有哪些？" class="headerlink" title="2. http协议中与资源缓存相关的协议头有哪些？"></a>2. http协议中与资源缓存相关的协议头有哪些？</h4><p>通用首部</p>
+<p>Cache-Control: HTTP/1.1+控制缓存的协议头</p>
+<p>pragma：HTTP/1.1版本之前控制缓存的协议头</p>
+<p>实体首部</p>
+<p>expires: 实体主题过期的时间</p>
+<blockquote>
+<p>通过响应来控制缓存，在响应头中主要有cache-control、pragma、expires三个响应头，其中expires是HTTP1.0中的响应头，后面直接跟一个缓存失效日期，但是服务器和客户端之间的时钟往往不同，因此通过该响应头来控制缓存失效时间不准确，一般不用，如果要设置客户端不缓存，则设置响应头“expires: -1”即可；pragema是HTTP1.1协议为了兼容HTTP1.0+协议，用来控制不缓存，“pragma: no-cache”；cache-control是HTTP1.1中的响应头，其参数为相对的秒值，即过多少秒缓存失效，因此建议使用该响应头来控制缓存失效时间，其后可以跟的内容有no-cache、no-store、max-age、must-revalidate<br>为了兼容各个协议版本，要想客户端不缓存资源，一般都添加三个响应头：cache-control: no-cache、pragma: no-cache、expires: -1<br>注意：cache-control: no-cache控制缓存，客户端是会缓存资源的，只是在于原始服务器进行再验证之前不会想客户端提供资源，也就是资源新鲜度永远过期，这样比直接访问服务器节省了资源在网络中的传输成本，相比开启缓存增加了再验证的成本，性能失效介于两者之间；要想客户端缓存不从响应中拷贝资源副本，则应该使用cache-control: no-store，使用该响应头内容也可以让缓存立即删除已经拷贝的副本；而must-revalidate是服务器希望缓存能严格遵守过期信息，一般情况下类似no-cache，但在缓存与原始服务器进行新鲜度验证的时候，原始服务器不可用，这将会导致这一段时间中访问该资源会504 gateway timeout，因此建议使用no-cache</p>
+</blockquote>
+<h4 id="3-简述cookie-session记住登录状态机制原理。"><a href="#3-简述cookie-session记住登录状态机制原理。" class="headerlink" title="3. 简述cookie/session记住登录状态机制原理。"></a>3. 简述cookie/session记住登录状态机制原理。</h4><blockquote>
+<p><strong>Cookie的机制</strong></p>
+<p>Cookie是浏览器（User Agent）访问一些网站后，这些网站存放在客户端的一组数据，用于使网站等跟踪用户，实现用户自定义功能。</p>
+<p>Cookie的Domain和Path属性标识了这个Cookie是哪一个网站发送给浏览器的；Cookie的Expires属性标识了Cookie的有 效时间，当Cookie的有效时间过了之后，这些数据就被自动删除了。</p>
+<p>如果不设置过期时间，则表示这个Cookie生命周期为浏览器会话期间，只要关闭浏览器窗口，Cookie就消失了。这种生命期为浏览会话期的 Cookie被称为会话Cookie。会话Cookie一般不保存在硬盘上而是保存在内存里。如果设置了过期时间，浏览器就会把Cookie保存到硬盘 上，关闭后再次打开浏览器，这些Cookie依然有效直到超过设定的过期时间。存储在硬盘上的Cookie可以在不同的浏览器进程间共享，比如两个IE窗 口。而对于保存在内存的Cookie，不同的浏览器有不同的处理方式。（设置age为负数就是窗口cookie，设置0删除cookie，设置正数存活的时间）</p>
+<p><strong>Session的机制</strong></p>
+<p>Session是存放在服务器端的类似于HashTable结构（每一种Web开发技术的实现可能不一样，下文直接称之为HashTable）来存放用户 数据，当浏览器第一次发送请求时，服务器自动生成了一个HashTable和一个Session ID用来唯一标识这个HashTable，并将其通过响应发送到浏览器。当浏览器第二次发送请求，会将前一次服务器响应中的Session ID放在请求中一并发送到服务器上，服务器从请求中提取出Session ID，并和保存的所有Session ID进行对比，找到这个用户对应的HashTable。</p>
+<p>一般情况下，服务器会在一定时间内（默认20分钟）保存这个HashTable，过了时间限制，就会销毁这个HashTable。在销毁之前，程序员可以 将用户的一些数据以Key和Value的形式暂时存放在这个HashTable中。当然，也有使用数据库将这个HashTable序列化后保存起来的，这 样的好处是没了时间的限制，坏处是随着时间的增加，这个数据库会急速膨胀，特别是访问量增加的时候。一般还是采取前一种方式，以减轻服务器压力。</p>
+</blockquote>
+<p><a href="https://www.cnblogs.com/leodaxin/p/7503677.html" target="_blank" rel="noopener">https://www.cnblogs.com/leodaxin/p/7503677.html</a></p>
+<h4 id="13-简述你对HTTP控制访问（CORS）的理解。"><a href="#13-简述你对HTTP控制访问（CORS）的理解。" class="headerlink" title="13.简述你对HTTP控制访问（CORS）的理解。"></a>13.简述你对HTTP控制访问（CORS）的理解。</h4><blockquote>
+<p>首先要搞明白什么是同源，什么是跨域。</p>
+<p>打一个简单的比方，你自己从你家里拿东西，不会有人说，这是同源；但是你要从隔壁的邻居的冰箱去拿可乐，你觉得可能吗，这就是跨域。</p>
+<p>从比方中回来，事实其实没有那么简单。理解了概念后，得知道如何去判断同源还是跨域。web服务器有三要素：协议（http、https）、端口号（不过多说）、web服务器域名（比如<a href="https://github.com/mamba666" target="_blank" rel="noopener">https://github.com/mamba666</a><br>中<a href="https://github.xn--com" target="_blank" rel="noopener">https://github.com就是域名）。三要素必须全部一致才算同源</a>-xk1gj6rgviyrv.xn–4gqra30xkrdw2ufsd371ai0x68cirqnhu2jufqw/)</p>
+<p>个人认为写完上面的东东后已经理解了同源跨域已经如何区分。接下来就来看看真正的干货，不讲同源，只讲跨域（以下参考MDN）</p>
+<h3 id="浏览器端"><a href="#浏览器端" class="headerlink" title="浏览器端"></a>浏览器端</h3><p>如果发现有一个请求是跨域，那么浏览器会自动先拦截一下，给它的http header加上Origin字段。比如 <a href="http://xn--localhost:8080origin:http-1l63bk34g//localhost:8080。这样一来，服务器端就可以区分这个请求是不是跨域了。">http://localhost:8080变为Origin:http://localhost:8080。这样一来，服务器端就可以区分这个请求是不是跨域了。</a></p>
+<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>当服务器端收到浏览器端发送过来的请求后，会有一个响应header。它会告诉请求的浏览器哪儿些域名可以请求我，哪儿些方法可以执行。</p>
+<h3 id="响应回到浏览器端"><a href="#响应回到浏览器端" class="headerlink" title="响应回到浏览器端"></a>响应回到浏览器端</h3><p>此时浏览器会根据这个响应自动判断，然后在做决定。</p>
+<h3 id="服务器端返回给浏览器端的东西"><a href="#服务器端返回给浏览器端的东西" class="headerlink" title="服务器端返回给浏览器端的东西"></a>服务器端返回给浏览器端的东西</h3><ul>
+<li>Access-Control-Allow-Origin 允许跨域的Origin列表</li>
+<li>Access-Control-Allow-Methods 允许跨域的方法列表（GET、POST等）</li>
+<li>Access-Control-Allow-Headers 允许跨域的Header列表</li>
+<li>Access-Control-Expose-Headers 允许暴露给JavaScript代码的Header列表</li>
+<li>Access-Control-Max-Age 最大的浏览器缓存时间，单位为s</li>
+</ul>
+<h3 id="跨域请求形式"><a href="#跨域请求形式" class="headerlink" title="跨域请求形式"></a>跨域请求形式</h3><p>有两种，简单和非简单请求。这里说说我常遇到的 application/json 。这就是一种非简单请求，在以上所写的浏览器端之前，会先进行一次预请求，根据这个结果再去判断是否正式请求。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -177,25 +241,90 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/03/23/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HTML面试题
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/03/23/JavaScript%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript面试题总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="计算机网络" data-title="计算机网络面试题总结" data-url="http://yoursite.com/2020/03/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -218,9 +347,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

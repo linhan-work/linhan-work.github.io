@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: CSS | ALPERS</title>
+  <title>JavaScript面试题总结 | ALPERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在发际线升高的路上越走越远">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ALPERS">
-<meta property="og:url" content="http://yoursite.com/tags/CSS/index.html">
+  <meta name="description" content="1. [] &#x3D;&#x3D; [] 输出的结果是？为什么？ []&#x3D;&#x3D;[]输出的结果为false； 首先，‘&#x3D;&#x3D;’运算符比较的是两个操作数是否相等，（这里不是指严格相等），两个操作数都是空数组，都是Object对象。但是对象的比较并非是值得比较，即使这两个都是空数组（包含同样的属性和数值都为空），但是这两个数组在引用上都不是同一个数组，所以他们也是不相等。   数组的存储是堆空间，所以数组的标识存放的只是对应数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript面试题总结">
+<meta property="og:url" content="http://yoursite.com/2020/03/23/JavaScript%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="ALPERS">
-<meta property="og:description" content="在发际线升高的路上越走越远">
+<meta property="og:description" content="1. [] &#x3D;&#x3D; [] 输出的结果是？为什么？ []&#x3D;&#x3D;[]输出的结果为false； 首先，‘&#x3D;&#x3D;’运算符比较的是两个操作数是否相等，（这里不是指严格相等），两个操作数都是空数组，都是Object对象。但是对象的比较并非是值得比较，即使这两个都是空数组（包含同样的属性和数值都为空），但是这两个数组在引用上都不是同一个数组，所以他们也是不相等。   数组的存储是堆空间，所以数组的标识存放的只是对应数">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-23T02:23:09.000Z">
+<meta property="article:modified_time" content="2020-03-23T02:54:04.246Z">
 <meta property="article:author" content="alpers">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ALPERS" type="application/atom+xml">
@@ -138,36 +142,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JavaScript面试题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-03-22T07:12:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/">CSS面试题总结</a>
+    <h1 class="article-title" itemprop="name">
+      JavaScript面试题总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/23/JavaScript%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-03-23T02:23:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-输出的结果是？为什么？"><a href="#1-输出的结果是？为什么？" class="headerlink" title="1. [] == [] 输出的结果是？为什么？"></a>1. [] == [] 输出的结果是？为什么？</h4><ul>
+<li>[]==[]输出的结果为false；</li>
+<li>首先，‘==’运算符比较的是两个操作数是否相等，（这里不是指严格相等），两个操作数都是空数组，都是Object对象。但是对象的比较并非是值得比较，即使这两个都是空数组（包含同样的属性和数值都为空），但是这两个数组在引用上都不是同一个数组，所以他们也是不相等。</li>
+</ul>
+<ul>
+<li>数组的存储是堆空间，所以数组的标识存放的只是对应数据的地址值，所以数组之间都不完全相等，题目中的两个数组只是值相等，地址值不同，所以答案false</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="2-装箱-拆箱"><a href="#2-装箱-拆箱" class="headerlink" title="2.装箱/拆箱"></a>2.装箱/拆箱</h4><ul>
+<li><p>装箱：把基本数据类型转换成对应的引用类型的操作。</p>
+</li>
+<li><p>拆箱：把引用类型转换成基本数据类型的操作。</p>
+</li>
+</ul>
+<blockquote>
+<p>在Javascript中出现 基本数据类型数据 和 引用数据类型数据要进行转换的情况下会进行装箱/拆箱操作。</p>
+</blockquote>
+<h4 id="3-new操作符做了什么？"><a href="#3-new操作符做了什么？" class="headerlink" title="3.new操作符做了什么？"></a>3.new操作符做了什么？</h4><blockquote>
+<p>new操作符新建了一个空对象，这个对象原型指向构造函数的prototype，执行构造函数后返回这个对象</p>
+</blockquote>
+<p>var a = new B();</p>
+<p>1、创建一个空对象，var obj = {}</p>
+<p>2、这个空对象的<em>proto_成员指向了构造函数（B）的prototype对象，实现继承，obj._proto</em> = B.protoyype</p>
+<p>3、把函数里的属性添加到空对象里面, 并且执行该函数；B.call(a) 绑定this</p>
+<p>4、返回添加属性后的对象；</p>
+<h4 id="4-网页中接收事件的顺序（事件流）有哪些？它们之间的区别是什么？"><a href="#4-网页中接收事件的顺序（事件流）有哪些？它们之间的区别是什么？" class="headerlink" title="4.网页中接收事件的顺序（事件流）有哪些？它们之间的区别是什么？"></a>4.网页中接收事件的顺序（事件流）有哪些？它们之间的区别是什么？</h4><p>事件冒泡、事件捕获、DOM事件流。</p>
+<p>1、事件冒泡又叫IE的事件流，即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。<br>2、事件捕获的思想是不太具体的节点应该更早的接收到事件，而最具体的节点应该在最后接收到节点。事件捕获的用意在于事件到达预定目标之前捕获它。<br>3、DOM2级事件流规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件作出响应。 </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -177,25 +207,90 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/03/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          计算机网络面试题总结
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/03/22/%E6%AF%95%E8%AE%BE%E5%90%8E%E7%AB%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">毕业设计后端</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="JavaScript面试题" data-title="JavaScript面试题总结" data-url="http://yoursite.com/2020/03/23/JavaScript%E9%9D%A2%E8%AF%95%E9%A2%98/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -218,9 +313,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
