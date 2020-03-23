@@ -232,19 +232,19 @@
 
 
   
-    <article id="post-面试总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-CSS面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">面试题总结（来源于牛客）</a>
+      <a class="article-title" href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/">CSS面试题总结</a>
     </h1>
   
 
         
-        <a href="/2020/03/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <a href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
   	<time datetime="2020-03-22T07:12:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
 </a>
         
@@ -252,20 +252,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-请说出三种减少页面加载时间的方法"><a href="#1-请说出三种减少页面加载时间的方法" class="headerlink" title="1. 请说出三种减少页面加载时间的方法"></a>1. 请说出三种减少页面加载时间的方法</h4><p><strong>服务器角度</strong></p>
-<ul>
-<li><p>采取CDN加速</p>
+        <h4 id="1-CSS中box-sizing有哪些值-区别是什么"><a href="#1-CSS中box-sizing有哪些值-区别是什么" class="headerlink" title="1. CSS中box-sizing有哪些值?区别是什么?"></a>1. CSS中box-sizing有哪些值?区别是什么?</h4><ul>
+<li><p>box-sizing是CSS3新增属性，可调整盒子模型的样式。</p>
 </li>
-<li><p>开启gzip压缩</p>
-</li>
-<li><p>允许使用强缓存或协商缓存</p>
-</li>
-<li><p>增加服务器带宽</p>
+<li><p>box-sizing：border-box表示盒模型基于IE的盒模型，width和height决定盒模型的content区、padding区和border区。</p>
 </li>
 </ul>
-        
-          <a class="article-more-a" href="/2020/03/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/#more">more >></a>
-        
+<ul>
+<li><p>box-sizing：content-box表示盒模型基于标准盒模型，width和height只决定盒模型的content区</p>
+</li>
+<li><p>box-sizing：inherit表示继承自父元素。</p>
+</li>
+</ul>
+<h4 id="2-请列举几种除了px外的CSS度量单位并解释其含义。"><a href="#2-请列举几种除了px外的CSS度量单位并解释其含义。" class="headerlink" title="2.请列举几种除了px外的CSS度量单位并解释其含义。"></a>2.请列举几种除了px外的CSS度量单位并解释其含义。</h4><ul>
+<li><p>em, 以父元素为基准</p>
+</li>
+<li><p>rem：以根目录元素为基准</p>
+</li>
+<li><p>vw,宽度100%就是100vw</p>
+</li>
+<li><p>wh，高度100%就是100vh </p>
+</li>
+</ul>
+<h4 id="3-css属性position都有哪些值？absolute绝对定位"><a href="#3-css属性position都有哪些值？absolute绝对定位" class="headerlink" title="3. css属性position都有哪些值？absolute绝对定位"></a>3. css属性position都有哪些值？absolute绝对定位</h4><ul>
+<li><p>relative相对定位</p>
+</li>
+<li><p>fixed固定定位</p>
+</li>
+<li><p>sticky粘性定位</p>
+</li>
+<li><p>static默认值，没有定位</p>
+</li>
+<li><p>inherit继承父系</p>
+</li>
+<li><p>initial设置该属性为默认值</p>
+</li>
+</ul>
+
       
 
       
@@ -280,6 +303,10 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -288,7 +315,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/">展开全文 >></a>
         </p>
       
 
@@ -476,6 +503,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Node</a>
               </li>
              
@@ -485,10 +520,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>

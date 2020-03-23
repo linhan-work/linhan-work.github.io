@@ -6,22 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>面试题总结（来源于牛客） | ALPERS</title>
+  <title>CSS面试题总结 | ALPERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 请说出三种减少页面加载时间的方法服务器角度  采取CDN加速  开启gzip压缩  允许使用强缓存或协商缓存  增加服务器带宽">
+  <meta name="description" content="1. CSS中box-sizing有哪些值?区别是什么? box-sizing是CSS3新增属性，可调整盒子模型的样式。  box-sizing：border-box表示盒模型基于IE的盒模型，width和height决定盒模型的content区、padding区和border区。    box-sizing：content-box表示盒模型基于标准盒模型，width和height只决定盒模型的c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试题总结（来源于牛客）">
-<meta property="og:url" content="http://yoursite.com/2020/03/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="CSS面试题总结">
+<meta property="og:url" content="http://yoursite.com/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="ALPERS">
-<meta property="og:description" content="1. 请说出三种减少页面加载时间的方法服务器角度  采取CDN加速  开启gzip压缩  允许使用强缓存或协商缓存  增加服务器带宽">
+<meta property="og:description" content="1. CSS中box-sizing有哪些值?区别是什么? box-sizing是CSS3新增属性，可调整盒子模型的样式。  box-sizing：border-box表示盒模型基于IE的盒模型，width和height决定盒模型的content区、padding区和border区。    box-sizing：content-box表示盒模型基于标准盒模型，width和height只决定盒模型的c">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20200310/806920363_1583852277848_ADED941CDC681EB3314E30FE45C4DD97">
 <meta property="article:published_time" content="2020-03-22T07:12:01.000Z">
-<meta property="article:modified_time" content="2020-03-22T09:36:26.748Z">
+<meta property="article:modified_time" content="2020-03-23T02:48:24.822Z">
 <meta property="article:author" content="alpers">
 <meta property="article:tag" content="面试">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://uploadfiles.nowcoder.com/images/20200310/806920363_1583852277848_ADED941CDC681EB3314E30FE45C4DD97">
   
     <link rel="alternative" href="/atom.xml" title="ALPERS" type="application/atom+xml">
   
@@ -143,19 +142,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-面试总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CSS面试题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      面试题总结（来源于牛客）
+      CSS面试题总结
     </h1>
   
 
         
-        <a href="/2020/03/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <a href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
   	<time datetime="2020-03-22T07:12:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
 </a>
         
@@ -163,75 +162,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-请说出三种减少页面加载时间的方法"><a href="#1-请说出三种减少页面加载时间的方法" class="headerlink" title="1. 请说出三种减少页面加载时间的方法"></a>1. 请说出三种减少页面加载时间的方法</h4><p><strong>服务器角度</strong></p>
-<ul>
-<li><p>采取CDN加速</p>
+        <h4 id="1-CSS中box-sizing有哪些值-区别是什么"><a href="#1-CSS中box-sizing有哪些值-区别是什么" class="headerlink" title="1. CSS中box-sizing有哪些值?区别是什么?"></a>1. CSS中box-sizing有哪些值?区别是什么?</h4><ul>
+<li><p>box-sizing是CSS3新增属性，可调整盒子模型的样式。</p>
 </li>
-<li><p>开启gzip压缩</p>
+<li><p>box-sizing：border-box表示盒模型基于IE的盒模型，width和height决定盒模型的content区、padding区和border区。</p>
 </li>
-<li><p>允许使用强缓存或协商缓存</p>
-</li>
-<li><p>增加服务器带宽</p>
-</li>
-</ul>
-<a id="more"></a>
-
-<p><strong>客户端角度</strong></p>
-<ul>
-<li>合理组织CSS、JavaScript代码位置</li>
-<li>减少DOM操作、添加事件委托</li>
-<li>部分操作可设置防抖和节流</li>
-<li>对于可预见的操作采取preload或prerender的预加载</li>
-<li>对于图片可以懒加载</li>
-<li>合并CSS图片（精灵图/雪碧图）</li>
-<li>减少使用iframe</li>
-</ul>
-<p><strong>资源优化打包角度</strong></p>
-<ul>
-<li>使用打包工具将Js文件、CSS文件和静态文件进行恰当打包处理。</li>
-</ul>
-<h4 id="2-输出的结果是？为什么？"><a href="#2-输出的结果是？为什么？" class="headerlink" title="2. [] == [] 输出的结果是？为什么？"></a>2. [] == [] 输出的结果是？为什么？</h4><ul>
-<li>[]==[]输出的结果为false；</li>
-<li>首先，‘==’运算符比较的是两个操作数是否相等，（这里不是指严格相等），两个操作数都是空数组，都是Object对象。但是对象的比较并非是值得比较，即使这两个都是空数组（包含同样的属性和数值都为空），但是这两个数组在引用上都不是同一个数组，所以他们也是不相等。</li>
 </ul>
 <ul>
-<li>数组的存储是堆空间，所以数组的标识存放的只是对应数据的地址值，所以数组之间都不完全相等，题目中的两个数组只是值相等，地址值不同，所以答案false</li>
-</ul>
-<h4 id="3-http协议中与资源缓存相关的协议头有哪些？"><a href="#3-http协议中与资源缓存相关的协议头有哪些？" class="headerlink" title="3. http协议中与资源缓存相关的协议头有哪些？"></a>3. http协议中与资源缓存相关的协议头有哪些？</h4><p>通用首部</p>
-<p>Cache-Control: HTTP/1.1+控制缓存的协议头</p>
-<p>pragma：HTTP/1.1版本之前控制缓存的协议头</p>
-<p>实体首部</p>
-<p>expires: 实体主题过期的时间</p>
-<blockquote>
-<p>通过响应来控制缓存，在响应头中主要有cache-control、pragma、expires三个响应头，其中expires是HTTP1.0中的响应头，后面直接跟一个缓存失效日期，但是服务器和客户端之间的时钟往往不同，因此通过该响应头来控制缓存失效时间不准确，一般不用，如果要设置客户端不缓存，则设置响应头“expires: -1”即可；pragema是HTTP1.1协议为了兼容HTTP1.0+协议，用来控制不缓存，“pragma: no-cache”；cache-control是HTTP1.1中的响应头，其参数为相对的秒值，即过多少秒缓存失效，因此建议使用该响应头来控制缓存失效时间，其后可以跟的内容有no-cache、no-store、max-age、must-revalidate<br>为了兼容各个协议版本，要想客户端不缓存资源，一般都添加三个响应头：cache-control: no-cache、pragma: no-cache、expires: -1<br>注意：cache-control: no-cache控制缓存，客户端是会缓存资源的，只是在于原始服务器进行再验证之前不会想客户端提供资源，也就是资源新鲜度永远过期，这样比直接访问服务器节省了资源在网络中的传输成本，相比开启缓存增加了再验证的成本，性能失效介于两者之间；要想客户端缓存不从响应中拷贝资源副本，则应该使用cache-control: no-store，使用该响应头内容也可以让缓存立即删除已经拷贝的副本；而must-revalidate是服务器希望缓存能严格遵守过期信息，一般情况下类似no-cache，但在缓存与原始服务器进行新鲜度验证的时候，原始服务器不可用，这将会导致这一段时间中访问该资源会504 gateway timeout，因此建议使用no-cache</p>
-</blockquote>
-<h4 id="4-CSS中box-sizing有哪些值-区别是什么"><a href="#4-CSS中box-sizing有哪些值-区别是什么" class="headerlink" title="4. CSS中box-sizing有哪些值?区别是什么?"></a>4. CSS中box-sizing有哪些值?区别是什么?</h4><p>box-sizing是CSS3新增属性，可调整盒子模型的样式。</p>
-<p>box-sizing：border-box表示盒模型基于IE的盒模型，width和height决定盒模型的content区、padding区和border区。</p>
-<p>box-sizing：content-box表示盒模型基于标准盒模型，width和height只决定盒模型的content区</p>
-<p>box-sizing：inherit表示继承自父元素。</p>
-<h4 id="5-DOM-Tree与Render-Tree之间的区别是什么"><a href="#5-DOM-Tree与Render-Tree之间的区别是什么" class="headerlink" title="5.DOM Tree与Render Tree之间的区别是什么?"></a>5.DOM Tree与Render Tree之间的区别是什么?</h4><ul>
-<li><p>Dom Tree 包含了所有的HTMl标签，包括display：none ，JS动态添加的元素等。</p>
+<li><p>box-sizing：content-box表示盒模型基于标准盒模型，width和height只决定盒模型的content区</p>
 </li>
-<li><p>Dom Tree 和样式结构体结合后构建呈现Render Tree。Render Tree 能识别样式，每个node都有自己的style，且不包含隐藏的节点（比如display : none的节点）。</p>
+<li><p>box-sizing：inherit表示继承自父元素。</p>
 </li>
 </ul>
-<blockquote>
-<p>呈现器是和 DOM 元素相对应的，但并非一一对应。非可视化的 DOM 元素不会插入呈现树中，例如“head”元素。如果元素的 display 属性值为“none”，那么也不会显示在呈现树中（但是 visibility 属性值为“hidden”的元素仍会显示）。</p>
-<p>有一些 DOM 元素对应多个可视化对象。它们往往是具有复杂结构的元素，无法用单一的矩形来描述。例如，“select”元素有 3 个呈现器：一个用于显示区域，一个用于下拉列表框，还有一个用于按钮。如果由于宽度不够，文本无法在一行中显示而分为多行，那么新的行也会作为新的呈现器而添加。<br>另一个关于多呈现器的例子是格式无效的 HTML。根据 CSS 规范，inline 元素只能包含 block 元素或 inline 元素中的一种。如果出现了混合内容，则应创建匿名的 block 呈现器，以包裹 inline 元素。</p>
-<p>有一些呈现对象对应于 DOM 节点，但在树中所在的位置与 DOM 节点不同。浮动定位和绝对定位的元素就是这样，它们处于正常的流程之外，放置在树中的其他地方，并映射到真正的框架，而放在原位的是占位框架。</p>
-<p><img src="https://uploadfiles.nowcoder.com/images/20200310/806920363_1583852277848_ADED941CDC681EB3314E30FE45C4DD97" alt="img"></p>
-</blockquote>
-<h4 id="6-装箱-拆箱"><a href="#6-装箱-拆箱" class="headerlink" title="6.装箱/拆箱"></a>6.装箱/拆箱</h4><ul>
-<li><p>装箱：把基本数据类型转换成对应的引用类型的操作。</p>
-</li>
-<li><p>拆箱：把引用类型转换成基本数据类型的操作。</p>
-</li>
-</ul>
-<blockquote>
-<p>在Javascript中出现 基本数据类型数据 和 引用数据类型数据要进行转换的情况下会进行装箱/拆箱操作。</p>
-</blockquote>
-<h4 id="7-请列举几个HTML5语义化标签，并说说语义化有什么优点？"><a href="#7-请列举几个HTML5语义化标签，并说说语义化有什么优点？" class="headerlink" title="7. 请列举几个HTML5语义化标签，并说说语义化有什么优点？"></a>7. 请列举几个HTML5语义化标签，并说说语义化有什么优点？</h4><p>[<a href="https://blog.csdn.net/low666/article/details/104639457]" target="_blank" rel="noopener">https://blog.csdn.net/low666/article/details/104639457]</a></p>
-<h4 id="8-请列举几种除了px外的CSS度量单位并解释其含义。"><a href="#8-请列举几种除了px外的CSS度量单位并解释其含义。" class="headerlink" title="8.请列举几种除了px外的CSS度量单位并解释其含义。"></a>8.请列举几种除了px外的CSS度量单位并解释其含义。</h4><ul>
+<h4 id="2-请列举几种除了px外的CSS度量单位并解释其含义。"><a href="#2-请列举几种除了px外的CSS度量单位并解释其含义。" class="headerlink" title="2.请列举几种除了px外的CSS度量单位并解释其含义。"></a>2.请列举几种除了px外的CSS度量单位并解释其含义。</h4><ul>
 <li><p>em, 以父元素为基准</p>
 </li>
 <li><p>rem：以根目录元素为基准</p>
@@ -241,49 +184,20 @@
 <li><p>wh，高度100%就是100vh </p>
 </li>
 </ul>
-<h4 id="9-new操作符做了什么？"><a href="#9-new操作符做了什么？" class="headerlink" title="9.new操作符做了什么？"></a>9.new操作符做了什么？</h4><blockquote>
-<p>new操作符新建了一个空对象，这个对象原型指向构造函数的prototype，执行构造函数后返回这个对象</p>
-</blockquote>
-<p>var a = new B();</p>
-<p>1、创建一个空对象，var obj = {}</p>
-<p>2、这个空对象的<em>proto_成员指向了构造函数（B）的prototype对象，实现继承，obj._proto</em> = B.protoyype</p>
-<p>3、把函数里的属性添加到空对象里面, 并且执行该函数；B.call(a) 绑定this</p>
-<p>4、返回添加属性后的对象；</p>
-<h4 id="10-简述cookie-session记住登录状态机制原理。"><a href="#10-简述cookie-session记住登录状态机制原理。" class="headerlink" title="10. 简述cookie/session记住登录状态机制原理。"></a>10. 简述cookie/session记住登录状态机制原理。</h4><blockquote>
-<p><strong>Cookie的机制</strong></p>
-<p>Cookie是浏览器（User Agent）访问一些网站后，这些网站存放在客户端的一组数据，用于使网站等跟踪用户，实现用户自定义功能。</p>
-<p>Cookie的Domain和Path属性标识了这个Cookie是哪一个网站发送给浏览器的；Cookie的Expires属性标识了Cookie的有 效时间，当Cookie的有效时间过了之后，这些数据就被自动删除了。</p>
-<p>如果不设置过期时间，则表示这个Cookie生命周期为浏览器会话期间，只要关闭浏览器窗口，Cookie就消失了。这种生命期为浏览会话期的 Cookie被称为会话Cookie。会话Cookie一般不保存在硬盘上而是保存在内存里。如果设置了过期时间，浏览器就会把Cookie保存到硬盘 上，关闭后再次打开浏览器，这些Cookie依然有效直到超过设定的过期时间。存储在硬盘上的Cookie可以在不同的浏览器进程间共享，比如两个IE窗 口。而对于保存在内存的Cookie，不同的浏览器有不同的处理方式。（设置age为负数就是窗口cookie，设置0删除cookie，设置正数存活的时间）</p>
-<p><strong>Session的机制</strong></p>
-<p>Session是存放在服务器端的类似于HashTable结构（每一种Web开发技术的实现可能不一样，下文直接称之为HashTable）来存放用户 数据，当浏览器第一次发送请求时，服务器自动生成了一个HashTable和一个Session ID用来唯一标识这个HashTable，并将其通过响应发送到浏览器。当浏览器第二次发送请求，会将前一次服务器响应中的Session ID放在请求中一并发送到服务器上，服务器从请求中提取出Session ID，并和保存的所有Session ID进行对比，找到这个用户对应的HashTable。</p>
-<p>一般情况下，服务器会在一定时间内（默认20分钟）保存这个HashTable，过了时间限制，就会销毁这个HashTable。在销毁之前，程序员可以 将用户的一些数据以Key和Value的形式暂时存放在这个HashTable中。当然，也有使用数据库将这个HashTable序列化后保存起来的，这 样的好处是没了时间的限制，坏处是随着时间的增加，这个数据库会急速膨胀，特别是访问量增加的时候。一般还是采取前一种方式，以减轻服务器压力。</p>
-</blockquote>
-<p><a href="https://www.cnblogs.com/leodaxin/p/7503677.html" target="_blank" rel="noopener">https://www.cnblogs.com/leodaxin/p/7503677.html</a></p>
-<h4 id="11-网页中接收事件的顺序（事件流）有哪些？它们之间的区别是什么？"><a href="#11-网页中接收事件的顺序（事件流）有哪些？它们之间的区别是什么？" class="headerlink" title="11.网页中接收事件的顺序（事件流）有哪些？它们之间的区别是什么？"></a>11.网页中接收事件的顺序（事件流）有哪些？它们之间的区别是什么？</h4><p>事件冒泡、事件捕获、DOM事件流。</p>
-<p>1、事件冒泡又叫IE的事件流，即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。<br>2、事件捕获的思想是不太具体的节点应该更早的接收到事件，而最具体的节点应该在最后接收到节点。事件捕获的用意在于事件到达预定目标之前捕获它。<br>3、DOM2级事件流规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件作出响应。 </p>
-<h4 id="12-css属性position都有哪些值？absolute绝对定位"><a href="#12-css属性position都有哪些值？absolute绝对定位" class="headerlink" title="12. css属性position都有哪些值？absolute绝对定位"></a>12. css属性position都有哪些值？absolute绝对定位</h4><p>relative相对定位</p>
-<p>fixed固定定位</p>
-<p>sticky粘性定位</p>
-<p>static默认值，没有定位</p>
-<p>inherit继承父系</p>
-<p>initial设置该属性为默认值</p>
-<h4 id="13-简述你对HTTP控制访问（CORS）的理解。"><a href="#13-简述你对HTTP控制访问（CORS）的理解。" class="headerlink" title="13.简述你对HTTP控制访问（CORS）的理解。"></a>13.简述你对HTTP控制访问（CORS）的理解。</h4><blockquote>
-<p>首先要搞明白什么是同源，什么是跨域。</p>
-<p>打一个简单的比方，你自己从你家里拿东西，不会有人说，这是同源；但是你要从隔壁的邻居的冰箱去拿可乐，你觉得可能吗，这就是跨域。</p>
-<p>从比方中回来，事实其实没有那么简单。理解了概念后，得知道如何去判断同源还是跨域。web服务器有三要素：协议（http、https）、端口号（不过多说）、web服务器域名（比如<a href="https://github.com/mamba666" target="_blank" rel="noopener">https://github.com/mamba666</a><br>中<a href="https://github.xn--com" target="_blank" rel="noopener">https://github.com就是域名）。三要素必须全部一致才算同源</a>-xk1gj6rgviyrv.xn–4gqra30xkrdw2ufsd371ai0x68cirqnhu2jufqw/)</p>
-<p>个人认为写完上面的东东后已经理解了同源跨域已经如何区分。接下来就来看看真正的干货，不讲同源，只讲跨域（以下参考MDN）</p>
-<h3 id="浏览器端"><a href="#浏览器端" class="headerlink" title="浏览器端"></a>浏览器端</h3><p>如果发现有一个请求是跨域，那么浏览器会自动先拦截一下，给它的http header加上Origin字段。比如 <a href="http://xn--localhost:8080origin:http-1l63bk34g//localhost:8080。这样一来，服务器端就可以区分这个请求是不是跨域了。">http://localhost:8080变为Origin:http://localhost:8080。这样一来，服务器端就可以区分这个请求是不是跨域了。</a></p>
-<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>当服务器端收到浏览器端发送过来的请求后，会有一个响应header。它会告诉请求的浏览器哪儿些域名可以请求我，哪儿些方法可以执行。</p>
-<h3 id="响应回到浏览器端"><a href="#响应回到浏览器端" class="headerlink" title="响应回到浏览器端"></a>响应回到浏览器端</h3><p>此时浏览器会根据这个响应自动判断，然后在做决定。</p>
-<h3 id="服务器端返回给浏览器端的东西"><a href="#服务器端返回给浏览器端的东西" class="headerlink" title="服务器端返回给浏览器端的东西"></a>服务器端返回给浏览器端的东西</h3><ul>
-<li>Access-Control-Allow-Origin 允许跨域的Origin列表</li>
-<li>Access-Control-Allow-Methods 允许跨域的方法列表（GET、POST等）</li>
-<li>Access-Control-Allow-Headers 允许跨域的Header列表</li>
-<li>Access-Control-Expose-Headers 允许暴露给JavaScript代码的Header列表</li>
-<li>Access-Control-Max-Age 最大的浏览器缓存时间，单位为s</li>
+<h4 id="3-css属性position都有哪些值？absolute绝对定位"><a href="#3-css属性position都有哪些值？absolute绝对定位" class="headerlink" title="3. css属性position都有哪些值？absolute绝对定位"></a>3. css属性position都有哪些值？absolute绝对定位</h4><ul>
+<li><p>relative相对定位</p>
+</li>
+<li><p>fixed固定定位</p>
+</li>
+<li><p>sticky粘性定位</p>
+</li>
+<li><p>static默认值，没有定位</p>
+</li>
+<li><p>inherit继承父系</p>
+</li>
+<li><p>initial设置该属性为默认值</p>
+</li>
 </ul>
-<h3 id="跨域请求形式"><a href="#跨域请求形式" class="headerlink" title="跨域请求形式"></a>跨域请求形式</h3><p>有两种，简单和非简单请求。这里说说我常遇到的 application/json 。这就是一种非简单请求，在以上所写的浏览器端之前，会先进行一次预请求，根据这个结果再去判断是否正式请求。</p>
-</blockquote>
 
       
 
@@ -298,6 +212,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
@@ -355,7 +273,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="面试总结" data-title="面试题总结（来源于牛客）" data-url="http://yoursite.com/2020/03/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/"></div>
+	<div class="ds-thread" data-thread-key="CSS面试题" data-title="CSS面试题总结" data-url="http://yoursite.com/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -473,6 +391,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Node</a>
               </li>
              
@@ -482,10 +408,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>
