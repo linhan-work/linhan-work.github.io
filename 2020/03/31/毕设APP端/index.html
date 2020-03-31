@@ -6,17 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | ALPERS</title>
+  <title>毕设APP端 | ALPERS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在发际线升高的路上越走越远">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ALPERS">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="整体设计 开发语言为react-native, 使用Hooks开发 打算先做UI部分, 然后做完UI和后端同步进行开发. 网络请求使用axios库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毕设APP端">
+<meta property="og:url" content="http://yoursite.com/2020/03/31/%E6%AF%95%E8%AE%BEAPP%E7%AB%AF/index.html">
 <meta property="og:site_name" content="ALPERS">
-<meta property="og:description" content="在发际线升高的路上越走越远">
+<meta property="og:description" content="整体设计 开发语言为react-native, 使用Hooks开发 打算先做UI部分, 然后做完UI和后端同步进行开发. 网络请求使用axios库">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3119.19.45.png">
+<meta property="og:image" content="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3120.38.20.png">
+<meta property="og:image" content="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3120.21.09.png">
+<meta property="article:published_time" content="2020-03-31T09:20:05.000Z">
+<meta property="article:modified_time" content="2020-03-31T14:54:48.246Z">
 <meta property="article:author" content="alpers">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="react-native">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3119.19.45.png">
   
     <link rel="alternative" href="/atom.xml" title="ALPERS" type="application/atom+xml">
   
@@ -138,36 +146,113 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-毕设APP端" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/31/%E6%AF%95%E8%AE%BEAPP%E7%AB%AF/" class="archive-article-date">
-  	<time datetime="2020-03-31T09:20:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/31/%E6%AF%95%E8%AE%BEAPP%E7%AB%AF/">毕设APP端</a>
+    <h1 class="article-title" itemprop="name">
+      毕设APP端
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/31/%E6%AF%95%E8%AE%BEAPP%E7%AB%AF/" class="archive-article-date">
+  	<time datetime="2020-03-31T09:20:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="整体设计"><a href="#整体设计" class="headerlink" title="整体设计"></a>整体设计</h3><p><img src="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3119.19.45.png" alt=""></p>
+<p>开发语言为<code>react-native</code>, 使用<code>Hooks</code>开发</p>
+<p>打算先做UI部分, 然后做完UI和后端同步进行开发.</p>
+<p>网络请求使用axios库</p>
+<a id="more"></a>
+
+<h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p><img src="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3120.38.20.png" alt=""></p>
+<h4 id="导航器"><a href="#导航器" class="headerlink" title="导航器"></a>导航器</h4><p><img src="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3120.21.09.png" alt=""></p>
+<p>这里的导航就差不多是路由的意思, 使用<code>createStackNavigator</code>创建Stack导航器, 包括一个Tab Navigator子导航器. </p>
+<h4 id="组件设计"><a href="#组件设计" class="headerlink" title="组件设计"></a>组件设计</h4><ul>
+<li><h2 id="登录注册组件"><a href="#登录注册组件" class="headerlink" title="登录注册组件"></a>登录注册组件</h2></li>
+</ul>
+<p>需要维护三个状态, 点击登录注册按钮时, 隐藏当前的注册登录按钮, 显示登录或者注册的登录框</p>
+<ul>
+<li><p>首页(下拉刷新)</p>
+<ul>
+<li><p>头部组件</p>
+<p>需要维护两个状态, 判断是否登录, 统计消息数量</p>
+</li>
+<li><p>热门文章组件</p>
+<p>轮播实现</p>
+</li>
+<li><p>文章组件(显示最新文章)</p>
+<p>下拉刷新</p>
+<p>维护三个状态, 点赞, 收藏, 评论, 不能实时刷新, 所以会导致点赞后点赞数不止+1</p>
+<p>支持图文混排, 文章组件中显示前三张图片</p>
+<p>头像, 发布时间</p>
+</li>
+<li><p>文章详情</p>
+<ul>
+<li><p>图文组件</p>
+</li>
+<li><p>收藏组件</p>
+<p>支持新建收藏</p>
+</li>
+<li><p>评论组件</p>
+<p>维护一个状态, 评论</p>
+<p>评论显示谁回复谁</p>
+</li>
+</ul>
+</li>
+<li><p>文章(下拉刷新以及滚动加载文章)</p>
+<ul>
+<li>搜索组件</li>
+<li>分类Tab组件</li>
+<li>详细文章组件(同上)</li>
+<li>发布文章组件(右下角+)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>个人中心</p>
+<ul>
+<li><p>个人资料卡组件(查看他人资料卡会有私信功能)</p>
+<ul>
+<li>详情组件</li>
+</ul>
+</li>
+<li><p>粉丝以及关注组件</p>
+<ul>
+<li>粉丝关注详细组件</li>
+</ul>
+</li>
+<li><p>功能组件</p>
+<ul>
+<li>我的文章</li>
+<li>我的草稿</li>
+<li>我的收藏<ul>
+<li>收藏详情组件</li>
+</ul>
+</li>
+<li>功能待添加</li>
+<li>历史浏览</li>
+<li>退出登录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -183,260 +268,75 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/23/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-03-23T02:30:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/23/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTML面试题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/23/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/">HTML面试题</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="毕设APP端" data-title="毕设APP端" data-url="http://yoursite.com/2020/03/31/%E6%AF%95%E8%AE%BEAPP%E7%AB%AF/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="archive-article-date">
-  	<time datetime="2020-03-23T02:26:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络面试题总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/23/JavaScript%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-03-23T02:23:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/23/JavaScript%E9%9D%A2%E8%AF%95%E9%A2%98/">JavaScript面试题总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/22/%E6%AF%95%E8%AE%BE%E5%90%8E%E7%AB%AF/" class="archive-article-date">
-  	<time datetime="2020-03-22T12:49:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/22/%E6%AF%95%E8%AE%BE%E5%90%8E%E7%AB%AF/">毕业设计后端</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Node</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Koa</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-03-22T07:12:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/22/CSS%E9%9D%A2%E8%AF%95%E9%A2%98/">CSS面试题总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/22/%E5%86%99%E5%9C%A8%E6%9C%80%E5%88%9D/" class="archive-article-date">
-  	<time datetime="2020-03-22T01:44:05.648Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/22/%E5%86%99%E5%9C%A8%E6%9C%80%E5%88%9D/">写在最初</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -459,8 +359,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

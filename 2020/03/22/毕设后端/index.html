@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://picture.alpers.cn/alpers/data.png">
 <meta property="og:image" content="http://picture.alpers.cn/alpers/20200322222322.png">
 <meta property="article:published_time" content="2020-03-22T12:49:36.000Z">
-<meta property="article:modified_time" content="2020-03-25T14:22:32.387Z">
+<meta property="article:modified_time" content="2020-03-31T08:45:34.727Z">
 <meta property="article:author" content="alpers">
 <meta property="article:tag" content="Node">
 <meta property="article:tag" content="Koa">
@@ -177,10 +177,7 @@
 <p><img src="http://picture.alpers.cn/alpers/data.png" alt=""></p>
 <a id="more"></a>
 
-<h3 id="2-登录"><a href="#2-登录" class="headerlink" title="2.登录"></a>2.登录</h3><p>首先，登录功能写过都不知道多少遍了，我拿手直接就是搞，不过好像记得老师说过，今年毕设答辩极其严格，那怎么搞。经过一番考虑（吃把鸡冷静一下），不如搞个持久化登录。大概是这个样子的，token一般过期比较快，怎么能实现持久化登录呢？</p>
-<p>登录成功 –&gt;签发token–&gt;前端设置拦截器保存–&gt;请求到来–&gt;token验证</p>
-<p>我有一想法，签发token的同时存进数据库。MySQL是有事件的，所以可以用MySQL设置定时事件，假设设置token10天过期，在token验证之前进行拦截，首先对token进行查询，如果存在数据库内的话，就重新签发token，更新header和数据库中的token，并将token放在返回头中，以便前端更新token。然后再进行验证。 </p>
-<ol>
+<h3 id="2-项目初始化及结构"><a href="#2-项目初始化及结构" class="headerlink" title="2.项目初始化及结构"></a>2.项目初始化及结构</h3><ol>
 <li>新建项目</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init -y</span><br></pre></td></tr></table></figure>
@@ -193,12 +190,21 @@
 <ol start="3">
 <li>项目结构</li>
 </ol>
+<p>入口文件是index.js</p>
 <p><img src="http://picture.alpers.cn/alpers/20200322222322.png" alt=""></p>
 <ol start="4">
 <li>Index.js</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">'koa-bodyparser'</span>)</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">'koa2-cors'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//登录模块</span></span><br><span class="line"><span class="keyword">const</span> login = <span class="built_in">require</span>(<span class="string">'./controller/user'</span>)</span><br><span class="line"><span class="comment">//拦截token</span></span><br><span class="line"><span class="keyword">const</span> longToken = <span class="built_in">require</span>(<span class="string">'./tools/longToken'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="comment">//允许跨域</span></span><br><span class="line">app.use(cors());</span><br><span class="line"><span class="comment">//添加formData数据解析</span></span><br><span class="line">app.use(bodyParser());</span><br><span class="line"><span class="comment">//拦截token</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; longToken.reToken(ctx, next));</span><br><span class="line"><span class="comment">//验证token</span></span><br><span class="line">app.use(longToken.koaJwt);</span><br><span class="line"><span class="comment">// 错误处理</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; longToken.dealError(ctx, next))</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加路由</span></span><br><span class="line">app.use(login.routes());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//监听3000端口</span></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">'koa-bodyparser'</span>)</span><br><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">'koa2-cors'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//登录模块</span></span><br><span class="line"><span class="comment">// const login = require('./controller/user')</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">'./router/router'</span>)</span><br><span class="line"><span class="comment">//拦截token</span></span><br><span class="line"><span class="keyword">const</span> longToken = <span class="built_in">require</span>(<span class="string">'./tools/longToken'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"><span class="comment">//允许跨域</span></span><br><span class="line">app.use(cors());</span><br><span class="line"><span class="comment">//添加formData数据解析</span></span><br><span class="line">app.use(bodyParser());</span><br><span class="line"></span><br><span class="line"><span class="comment">//验证token</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; longToken.reToken(ctx, next));</span><br><span class="line">app.use(longToken.koaJwt);</span><br><span class="line"><span class="comment">// 错误处理</span></span><br><span class="line">app.use(<span class="keyword">async</span> (ctx, next) =&gt; longToken.dealError(ctx, next))</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加总路由</span></span><br><span class="line"><span class="comment">// app.use(login.routes());</span></span><br><span class="line">app.use(router.routes());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//监听3000端口</span></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>总路由</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>);</span><br><span class="line"><span class="keyword">const</span> userRouter = <span class="built_in">require</span>(<span class="string">'../controller/user'</span>)</span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> Router();</span><br><span class="line"></span><br><span class="line">router.use(<span class="string">'/user'</span>, userRouter.routes());</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><h4 id="3-1登录"><a href="#3-1登录" class="headerlink" title="3.1登录"></a>3.1登录</h4><p>首先，登录功能写过都不知道多少遍了，我拿手直接就是搞，不过好像记得老师说过，今年毕设答辩极其严格，那怎么搞。经过一番考虑（吃把鸡冷静一下），不如搞个持久化登录。大概是这个样子的，token一般过期比较快，怎么能实现持久化登录呢？</p>
+<p>登录成功 –&gt;签发token–&gt;前端设置拦截器保存–&gt;请求到来–&gt;token验证</p>
+<p>我有一想法，签发token的同时存进数据库。MySQL是有事件的，所以可以用MySQL设置定时事件，假设设置token10天过期，在token验证之前进行拦截，首先对token进行查询，如果存在数据库内的话，就重新签发token，更新header和数据库中的token，并将token放在返回头中，以便前端更新token。然后再进行验证。</p>
 <ul>
 <li>拦截token</li>
 </ul>
@@ -208,6 +214,16 @@
 <li>验证token</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> kt = koajwt(&#123;</span><br><span class="line">    secret: cert<span class="comment">//cert 为解密用的密钥</span></span><br><span class="line">&#125;, &#123; <span class="attr">algorithms</span>: [<span class="string">'RS256'</span>] &#125;).unless(&#123;</span><br><span class="line">    path: [<span class="regexp">/\/login/</span>]<span class="comment">//不需要token验证</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>登录路由</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">"/login"</span>, <span class="keyword">async</span> ctx =&gt; &#123;</span><br><span class="line">    <span class="comment">// 获取数据</span></span><br><span class="line">    <span class="keyword">const</span> &#123;user_name, user_password&#125; = ctx.request.body;</span><br><span class="line">    <span class="comment">// 查询用户是否存在</span></span><br><span class="line">    <span class="keyword">let</span> rs = <span class="keyword">await</span> userModel.login(user_name, user_password);</span><br><span class="line">    rs = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(rs));</span><br><span class="line">    <span class="comment">// 判断是否存在</span></span><br><span class="line">    <span class="keyword">if</span> (rs) &#123;</span><br><span class="line">        <span class="comment">//生成token</span></span><br><span class="line">        <span class="keyword">let</span> jwt = <span class="keyword">new</span> JwtUtil(user_name);</span><br><span class="line">        <span class="keyword">let</span> token = jwt.generateToken();</span><br><span class="line">        <span class="comment">// 返回token, 其实可以直接在response中返回</span></span><br><span class="line">        ctx.status = <span class="number">200</span>;</span><br><span class="line">        ctx.body =  <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">            data: &#123;</span><br><span class="line">                token: token</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ctx.status = <span class="number">401</span>;</span><br><span class="line">        ctx.body =  <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">            msg: <span class="string">'wrong username or password'</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>userModel.js</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入数据库处理工具</span></span><br><span class="line"><span class="keyword">const</span> db = <span class="built_in">require</span>(<span class="string">'../tools/dbUtil'</span>);</span><br><span class="line"><span class="keyword">const</span> sql = &#123;</span><br><span class="line">    login: <span class="string">'select * from user where user_name = ? and user_password = ?'</span>,</span><br><span class="line">    changeP: <span class="string">'update user set user_password=? where user_name=?'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">    <span class="comment">//登录处理</span></span><br><span class="line">    login: <span class="keyword">async</span> (user_name, user_password) =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> rs = <span class="keyword">await</span> db.first(sql.login, user_name, user_password);</span><br><span class="line">        <span class="keyword">return</span> rs;</span><br><span class="line">    &#125;,</span><br><span class="line">    changePassword: <span class="keyword">async</span> (user_name, newPassword) =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> rs = <span class="keyword">await</span> db.first(sql.changeP, newPassword, user_name);</span><br><span class="line">        <span class="keyword">return</span> rs;</span><br><span class="line">    &#125;,</span><br><span class="line">    getPersonal: <span class="keyword">async</span> (user_name) =&gt; &#123;</span><br><span class="line">        <span class="keyword">let</span> rs = <span class="keyword">await</span> db.first(sql.person, user_name);</span><br><span class="line">        <span class="keyword">return</span> rs;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = user;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -414,11 +430,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,10 +459,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
             
             <div class="clearfix"></div>
