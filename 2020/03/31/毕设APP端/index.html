@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3120.38.20.png">
 <meta property="og:image" content="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3120.21.09.png">
 <meta property="article:published_time" content="2020-03-31T09:20:05.000Z">
-<meta property="article:modified_time" content="2020-03-31T14:54:48.246Z">
+<meta property="article:modified_time" content="2020-04-06T07:29:47.385Z">
 <meta property="article:author" content="alpers">
 <meta property="article:tag" content="react">
 <meta property="article:tag" content="react-native">
@@ -176,7 +176,7 @@
 <h4 id="导航器"><a href="#导航器" class="headerlink" title="导航器"></a>导航器</h4><p><img src="http://picture.alpers.cn/alpers/%E6%88%AA%E5%B1%8F2020-03-3120.21.09.png" alt=""></p>
 <p>这里的导航就差不多是路由的意思, 使用<code>createStackNavigator</code>创建Stack导航器, 包括一个Tab Navigator子导航器. </p>
 <h4 id="组件设计"><a href="#组件设计" class="headerlink" title="组件设计"></a>组件设计</h4><ul>
-<li><h2 id="登录注册组件"><a href="#登录注册组件" class="headerlink" title="登录注册组件"></a>登录注册组件</h2></li>
+<li>登录注册组件</li>
 </ul>
 <p>需要维护三个状态, 点击登录注册按钮时, 隐藏当前的注册登录按钮, 显示登录或者注册的登录框</p>
 <ul>
@@ -240,6 +240,19 @@
 <li>功能待添加</li>
 <li>历史浏览</li>
 <li>退出登录</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>打开APP</p>
+<p>判断是否登录</p>
+<ul>
+<li>未登录<ul>
+<li>拉取新闻</li>
+<li>已登录<ul>
+<li>头像</li>
+<li>个人中心</li>
 </ul>
 </li>
 </ul>
@@ -429,6 +442,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
@@ -437,23 +454,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,6 +467,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">react-native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
             
             <div class="clearfix"></div>
